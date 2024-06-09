@@ -1,60 +1,13 @@
-# Turborepo starter with Shad CN
+# Turborepo starter
 
-This is forked from the official starter Turborepo.
-
-## Changes to original repo
-
-1. Added [ShadCN UI](https://ui.shadcn.com/)
-
-2. Added [Tailwind CSS](https://tailwindcss.com/) (as it is a dependency of shadCN)
+This is an official starter Turborepo.
 
 ## Using this example
 
-1. Clone the repo
+Run the following command:
 
-2. Install the deps
-
-3. Dev away
-
-### Add a component
-
-1. `cd packages/ui`
-
-2. `pnpm generate:component` -- refer to
-   https://ui.shadcn.com/docs/components/accordion
-
-3. Edit `packages/ui/components/index.tsx` to `export * from "./new-component"`
-   if your component is a server component
-
-   OR
-
-   Edit `packages/ui/components/client-components.tsx` to `export * from
-"./new-component"` if your component is a client component
-
-### Use a component
-
-1. Within you app folder, for example `apps/web`
-
-2. Add a `postcss.config.js` file
-
-3. Within that simply export the UI Lib's config: `module.exports =
-require("@repo/ui/postcss.config");`
-
-4. Add a `tailwind.config.ts` file
-
-5. Import the shared config from the UI lib: `import sharedConfig from
-"@repo/ui/tailwind.config";`
-
-6. Add a default export which has the following:
-
-```
-{
-  presets: [sharedConfig], // The config you imported from the UI lib in an array
-  content: [
-    "../../packages/ui/src/**/*.tsx", // Path to te UI lib so tailwind knows to factor those classes
-    "./app/**/*.tsx", // Path to your components so tailwind can include those classes
-  ],
-}
+```sh
+npx create-turbo@latest
 ```
 
 ## What's inside?
